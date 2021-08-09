@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 
-export default function AddTodo({ handleAddTodo }) {
+export default function AddTodo({ onAddTodo }) {
+  // state su useState
   const [title, setTitle] = useState('');
 
-  function sendtodo() {
+  function sendTodo() {
+    // mini validation
     if (!title) return console.error('enter title');
-    handleAddTodo(title);
+    onAddTodo(title);
+    // isvalyti ivesties lauka
     setTitle('');
   }
+
   return (
     <div>
       <input
@@ -16,7 +20,7 @@ export default function AddTodo({ handleAddTodo }) {
         type="text"
         placeholder="Add new todo"
       />
-      <button onClick={sendtodo}>Add</button>
+      <button onClick={sendTodo}>Add</button>
     </div>
   );
 }
