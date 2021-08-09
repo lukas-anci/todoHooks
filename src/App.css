@@ -1,0 +1,13 @@
+.item-done {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.fa {
+  margin: 0 0.5em;
+  cursor: pointer;
+}
+
+.cur-pointer {
+  cursor: pointer;
+}
