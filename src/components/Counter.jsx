@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Counter({ special }) {
+export default function Counter({ isSpecial: special, item }) {
   //   const user = {
   //     name: "mike",
   //     age: 88,
@@ -26,7 +26,7 @@ export default function Counter({ special }) {
   return (
     <div style={{ width: '25%' }}>
       <h2>{special && 'Special '}Counter</h2>
-      <h2>{count}</h2>
+      <h2>{item}</h2>
       <div>
         <button onClick={() => handleCount('+')}>{special && '2'}+</button>
         <button disabled={handleDisabled()} onClick={() => handleCount('-')}>
