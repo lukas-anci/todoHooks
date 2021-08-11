@@ -5,8 +5,8 @@ import Counter from './components/Counter';
 
 function App() {
   const counterData = [
-    { id: 1, value: 0 },
-    { id: 2, value: 0 },
+    { id: 1, value: 4 },
+    { id: 2, value: 3 },
     { id: 3, value: 0, isSpecial: true },
     { id: 4, value: 4 },
   ];
@@ -33,6 +33,15 @@ function App() {
     setCounters(counterCopy);
   };
 
+  const resetCounters = () => {
+    const countersAfterReset = counters.map((c) => ({
+      ...c,
+      value: c.isSpecial ? 'start over' : 0,
+    }));
+    console.log(countersAfterReset);
+    setCounters(countersAfterReset);
+  };
+
   return (
     <div className="App">
       <div className="d-flex">
@@ -45,7 +54,7 @@ function App() {
           />
         ))}
       </div>
-      <button>ResetAll</button>
+      <button onClick={resetCounters}>ResetAll</button>
     </div>
   );
 }
