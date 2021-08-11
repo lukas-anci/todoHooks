@@ -31,7 +31,6 @@ function App() {
     setTodos(todosCopy);
   };
   const handleDelete = (id) => {
-    console.log(id);
     const todosCopy = todos.filter((t) => t.id !== id);
     setTodos(todosCopy);
   };

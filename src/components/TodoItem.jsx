@@ -29,7 +29,11 @@ export const TodoItem = ({ item, onDoneUndone, onEditTodo, onDelete }) => {
         <input type="text" value={editTitle} onChange={handleEditTitle} />
       )}
       <i onClick={sendTitle} className="fa fa-pencil"></i>
-      <i onClick={() => onDelete(item.id)} className="fa fa-trash"></i>
+      <i
+        style={{ color: 'red' }}
+        onClick={() => onDelete(item.id)}
+        className="fa fa-trash"
+      ></i>
     </li>
   );
 };
