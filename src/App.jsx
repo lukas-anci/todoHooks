@@ -56,12 +56,17 @@ function App() {
     <div className="App">
       <h2>Todo list</h2>
       <AddTodo onAddTodo={handleAddTodo} />
-      <TodoList
-        onDelete={handleDelete}
-        onEditTodo={handleEditTodo}
-        todos={todos}
-        onDoneUndone={setDoneUndone}
-      />
+
+      {todos.lenght ? (
+        <TodoList
+          onDelete={handleDelete}
+          onEditTodo={handleEditTodo}
+          todos={todos}
+          onDoneUndone={setDoneUndone}
+        />
+      ) : (
+        <h3>Add todos</h3>
+      )}
     </div>
   );
 }
